@@ -28,7 +28,7 @@ Welcome to Sayma documentation!
     signals
     testing
     appendix
-    gateware
+    glossary
 
 
 
