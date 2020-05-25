@@ -13,19 +13,7 @@ Welcome to Sayma documentation!
     wiki_utca
     wiki_sayma
     intro
-    description
-    view
-    routing
-    clocking
-    panel
-    fmc
-    usb-uart
-    jtag
-    fpga
-    power
-    mmc
-    housekeeping
-    signals
+    sayma_amc/index
     testing
     appendix
     glossary
