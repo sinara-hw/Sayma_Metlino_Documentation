@@ -14,6 +14,7 @@ Welcome to Sayma documentation!
     wiki_sayma
     intro
     sayma_amc/index
+    sayma_rtm/index
     testing
     appendix
     glossary
