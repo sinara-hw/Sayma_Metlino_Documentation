@@ -6,11 +6,13 @@ This section contain several block schematics of Sayma AMC board.
 I/O connections
 ---------------
 
-General block schematic below shows simplified connections between I/O and components. Some unused connectors were left out to improve readability of this schematic.
+General block schematic below shows simplified connections between I/O and components. Some unused connectors were left out to improve readability of this schematic. Front panel connectors (green) and back connectors (blue) are arranged in the same order as in the PCB.
 
 .. figure:: img/Sayma_AMC_general.svg
 
     General block schematic
+
+.. _transceiver_connections:
 
 Transceiver connections
 -----------------------

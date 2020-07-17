@@ -1,7 +1,9 @@
+.. _FMC_section:
+
 FMC
 ===
 
-* VADJ: 1V8 @ 1A
+* VADJ: 1.8 V @ 2 A
 * FPGA Banks: 47HP and 48HP
 
 The connector is compliant with ANSI/VITA 57.1 FMC-LPC Standard.

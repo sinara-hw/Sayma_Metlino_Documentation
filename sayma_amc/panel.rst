@@ -185,11 +185,11 @@ Callout 18: LD19 is
 Headers pinout
 --------------
 
-.. figure:: img/jtag1.png
+.. figure:: img/FPGA_JTAG_conn.svg
 
     JTAG - Call out 20
 
-.. figure:: img/jtaglpc.png
+.. figure:: img/MMC_JTAG_conn.svg
 
     JTAG - Call out 21
 
