@@ -12,13 +12,12 @@ Welcome to Sayma documentation!
     wiki_introduction
     wiki_utca
     wiki_sayma
-    intro
     sayma_amc/index
     sayma_rtm/index
+    fpga
     testing
-    appendix
     glossary
-
+    todo
 
 
 Indices and tables

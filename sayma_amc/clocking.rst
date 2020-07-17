@@ -1,13 +1,14 @@
 Clocking
 ========
 
-This section describes how and where clock signals are routed.
+This section describes how and where clock signals are routed. Switches symbolize connections that can be altered by placement of capacitors. Default connection is symbolized by switch position.
 
-.. figure:: img/clk.eps
+.. figure:: img/Sayma_AMC_clk.png
 
-Clocks
+FPGA Oscillators
+----------------
 
-* OSC2 - 50MHz main clock source for FPGA resources
-* OSC3 - place-holder
-* OSC4 dedicated 200MHz clock source to gigabit transceivers
+* OSC1 - 200 MHz clock for MGT
+* OSC2 - 200 MHz clock for MGT (not mounted by default)
+* OSC3 - 50MHz main clock source for FPGA resources
 

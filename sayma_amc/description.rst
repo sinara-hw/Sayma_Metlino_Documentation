@@ -1,7 +1,7 @@
 Project description
 ===================
 
-The Sayma AMC is a Advanced Mezzanine Card carrier board to carry FMC cards and connect RTM modules.
+The Sayma AMC is a Advanced Mezzanine Card carrier board to carry FMC cards and connect RTM modules. It provides high-speed digital logic and memory.
 
 Functional specifications
 -------------------------
@@ -9,7 +9,7 @@ Functional specifications
 Programmable resources:
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-* Xilinx Kintex UltraScale – XCKU040-1FFVA-1156C FPGA
+* Xilinx Kintex UltraScale FPGA - XCKU040-1FFVA-1156C
 
     * speed grade: -1
     * 20 GTH transceivers (Max Preformance 16.3 Gb/s)
@@ -19,33 +19,37 @@ Programmable resources:
 Memory:
 ^^^^^^^
 
-* 512Mb  DDR3 SDRAM (32-bit interface), 800MHz (clock)
-* 1Gb  DDR3 SDRAM (64-bit interface), 800MHz (clock)
-* SPI Flash for FPGA configuration. Accessible by MMC
+* 1GB  DDR3 SDRAM with 32-bit interface and 800 MHz clock
+* 2GB  DDR3 SDRAM with 64-bit interface and 800 MHz clock
+* SPI Flash for FPGA configuration.
 * SPI Flash for user data storage
 * EEPROM with MAC and unique ID 
 
 Connectivity:
 ^^^^^^^^^^^^^
 
-* 1 high pin count (HPC) FMC slot for single width mezzanine card
-* Micro-USB UART connected to FPGA or MMC
-* Stand-alone 12V power connector 
+* 1 low pin count (LPC) FMC slot for single width mezzanine card
+* Micro-USB providing:
+
+    * JTAG
+    * AMC FPGA UART
+    * RTM FPGA UART
+    * MMC UART and DFU
+
+* Stand-alone 12V power connector
 * MGT (Multi-Gigabit Transceiver) connected to:
 
-    * FMC x1
-    * RTM x16
-    * Fat\_Pipe1 x2
-    * AMC P2P x4
-    * Port 0 – possibility connected to SATA
-    * SFP x2
+    * RTM x17 (optionally x16 with additional Fat\_Pipe1 connection)
+    * Fat\_Pipe1 x1 (optionally x2 without additional RTM connection)
+    * Port 0 (additionally connected to SATA)
+    * SFP x1 (optionally x2 if Port 0 is connected to ETH PHY)
 
-* RTM connector with 8 GTP routed to it. Compatible with Sayma RTM module.
-* Port 0 – possibility connected to SATA
-* RTM connector compatible with Sayma RTM module
+* RTM connector compatible with Sayma RTM module.
 
-Supply:
-^^^^^^^
+Optional connections can be made by resoldering capacitors on PCB. 
+
+Power supply:
+^^^^^^^^^^^^^
 
 * Monitoring of voltage and Power supply for RTM 12V and FMC 12V
 * FMC VADJ fixed to 1V8
@@ -55,14 +59,15 @@ Supply:
 Clocking:
 ^^^^^^^^^
 
-* Clock recovery Si5324
-* UFL CLK input
-* SMA CLK output
+* Si5324 - clock recovery and jitter attenuator
+* uFL CLK input and output
+* MCX CLK input and output
 
 Other:
 ^^^^^^
 
 * Temperature, voltage and current monitoring for critical power buses
 * Temperature monitoring: FMC1, supply, FPGA core, DDR memory
-* JTAG multiplexer (SCANSTA) for FMC access, local JTAG port and remote debug/Chipscope via Ethernet
+* JTAG multiplexer for FMC access, local JTAG port and USB JTAG
+* Optional Ethernet RGMII PHY for Port 0
 

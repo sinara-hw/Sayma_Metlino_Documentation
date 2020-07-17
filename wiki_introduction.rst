@@ -1,5 +1,5 @@
-Introduction to ARTIQ Sinara
-=============================
+Introduction to Sinara
+======================
 
 Sinara is an open-source hardware ecosystem originally designed for use
 in quantum physics experiments running the
@@ -13,7 +13,7 @@ about good design, reproducibility, testing and documentation. This
 makes those systems unreliable, fragile, and difficult to use and
 maintain. It also duplicates work in different laboratories. In
 addition, the performance and features of the existing systems
-(e.g.~regarding pulse shaping abilities) is becoming insufficient for
+(e.g. regarding pulse shaping abilities) is becoming insufficient for
 some experiments.
 
 To alleviate those problems, Sinara aims to be:
@@ -34,9 +34,7 @@ and NIST. The majority of the hardware was designed by WUT. The work was
 funded by ARL, Duke University, the University of Oxford, and the
 University of Freiburg.
 
-Currently, much of this hardware is at the prototyping stage. Information about the status of the various hardware projects making up Sinara can be found `here <https://github.com/sinara-hw/meta/wiki/Status>`_. Advice about purchasing Sinara hardware can be found `here <https://github.com/sinara-hw/meta/wiki/Purchasing>`_.
-
-.. \section{Overview}\label{overview}
+Currently, most of this hardware is at the production stage. Information about the status of the various hardware projects making up Sinara can be found `here <https://github.com/sinara-hw/meta/wiki/Status>`__. Advice about purchasing Sinara hardware can be found `here <https://github.com/sinara-hw/meta/wiki/Purchasing>`__.
 
 Following the ARTIQ model, an experiment consists of a core device
 (master) -- typically either a `Metlino <https://github.com/sinara-hw/Metlino/wiki>`_ or `Kasli <https://github.com/sinara-hw/Kasli/wiki>`_ --
@@ -52,14 +50,12 @@ output events across all devices in the experiment.
 
 Sinara uses two main form factors for hardware requiring real-time
 control: microTCA (uTCA) and Eurocard Extension Modules (EEM). Non
-real-time hardware is typically connected to the host PC using ethernet.
+real-time hardware is typically connected to the host PC using Ethernet.
 
 MicroTCA (uTCA) is Sinara's preferred form factor for high performance
 hardware with high-speed data converters requiring deterministic phase
 control, such as the Sayma Smart Arbitrary Waveform
-Generator (SAWG). 
-
-.. Information about uTCA hardware, including a list of parts needed to build a Sinara uTCA crate can be found \href{uTCA}{here}.
+Generator (SAWG).
 
 EEMs provide a lower cost, simpler platform than uTCA for hardware that
 requires real-time control, but not bandwidth or complexity of uTCA
@@ -70,7 +66,7 @@ Extension modules connect to a carrier, such as `Kasli <https://github.com/sinar
 are designed to be mounted either in stand-alone enclosures, or in a
 rack with a carrier, and connect to the carrier via ribbon cable. More
 details about the extension module standard can be found
-`here <https://github.com/sinara-hw/meta/wiki/EEM>`_.
+`here <https://github.com/sinara-hw/meta/wiki/EEM>`__.
 
 uTCA hardware interfaces with the extension modules either directly,
 using a `VHDCI carrier <https://github.com/sinara-hw/VHDCI_Carrier/wiki>`_, or indirectly, using a

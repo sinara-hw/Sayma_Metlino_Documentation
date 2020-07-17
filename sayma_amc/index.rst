@@ -8,12 +8,13 @@ Sayma AMC
     view
     routing
     clocking
+    i2c
     panel
     fmc
     usb-uart
     jtag
-    fpga
     power
     mmc
     housekeeping
     signals
+    appendix

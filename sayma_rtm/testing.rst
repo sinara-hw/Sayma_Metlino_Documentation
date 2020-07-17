@@ -1,4 +1,0 @@
-Factory acceptance testing
-==========================
-
-TBD

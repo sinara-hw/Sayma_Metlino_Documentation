@@ -1,19 +1,21 @@
 Product view
 ============
 
-.. figure:: img/SaymaT.jpg
+.. todo:: New photos, more evenly lit
 
-Top view
+.. figure:: img/sayma_amc_top.jpg
 
-.. figure:: img/SaymaB.jpg
+    Top view
 
-Bottom view
+.. figure:: img/sayma_amc_bottom.jpg
 
-.. figure:: img/SaymaF.jpg
+    Bottom view
 
-Front view
+.. figure:: img/sayma_amc_front.jpg
 
-.. figure:: img/back.jpg
+    Front view
 
-Back view
+.. .. figure:: img/back.jpg
+
+.. Back view
 

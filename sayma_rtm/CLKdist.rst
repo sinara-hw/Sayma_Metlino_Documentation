@@ -44,12 +44,12 @@ DRTIO (distributed real-time input/output) achieves three distinct things over a
 * It transfers the RTIO time. This means that it will designate a specific RTIO clock cycle as timestamp zero.
 * It transfers data. Data consists of RTIO events (outputs or inputs) and low bandwidth non-realtime auxiliary traffic.
 
-Note that the RTIO time (clock plus the cycle counter) is the primary and authoritative source of time in the ARTIQ tree. The RTIO clock is however not an extremely low noise clock that could serve as the sample clock in data conversion or as a base clock for picosecond level timestamping. Having another ``better'' clock do these tasks is not trivial since the alignment between such a sample clock and the RTIO clock is unknown. When data is transferred between the two clock domains it is undefined which RTIO cycle corresponds to which sample clock cycle.
+Note that the RTIO time (clock plus the cycle counter) is the primary and authoritative source of time in the ARTIQ tree. The RTIO clock is however not an extremely low noise clock that could serve as the sample clock in data conversion or as a base clock for picosecond level timestamping. Having another "better" clock do these tasks is not trivial since the alignment between such a sample clock and the RTIO clock is unknown. When data is transferred between the two clock domains it is undefined which RTIO cycle corresponds to which sample clock cycle.
 
 JESD204 synchronization	procedure
 ---------------------------------
 
-While JESD204B subclass 1 provides ``fixed latency'' for the data transfer between a converter (ADC or DAC) and the FPGA, this is fundamentally insufficient for DRTIO. We need more than just fixed latency. A JESD204B link has two deviceclocks: one for the converter and one for the FPGA. The SYSREF signal is used to designate which cycle of the faster of the two deviceclocks corresponds to the beginning of a cycle in the slower deviceclock. The slower deviceclock and SYSREF have an a priori unknown phase with respect to the RTIO clock.
+While JESD204B subclass 1 provides "fixed latency" for the data transfer between a converter (ADC or DAC) and the FPGA, this is fundamentally insufficient for DRTIO. We need more than just fixed latency. A JESD204B link has two deviceclocks: one for the converter and one for the FPGA. The SYSREF signal is used to designate which cycle of the faster of the two deviceclocks corresponds to the beginning of a cycle in the slower deviceclock. The slower deviceclock and SYSREF have an a priori unknown phase with respect to the RTIO clock.
 
 Timestamping a certain sample to a specific RTIO cycle requires two things in addition to JESD204B subclass 1 deterministic latency:
 
@@ -87,10 +87,10 @@ The HMC7044 has 14 outputs. They are used for:
 * ADC1 SYSREF
 * ADC2 deviceclock
 * ADC2 SYSREF
-* FPGA SYSREF {[}with fine delay{]}
+* FPGA SYSREF with fine delay
 * FPGA MGT reference clock for DAC
 * FPGA MGT reference clock for ADC
-* additional outputs to FPGA, usable e.g.~if we have problems with the recovered RTIO clock.
+* additional outputs to FPGA, usable e.g. if we have problems with the recovered RTIO clock.
 
 Clock constraints
 -----------------
@@ -100,7 +100,7 @@ Constraints
 
 * t\_RTIO = n * 1ns
 
-	* period of the coarse RTIO clock
+    * period of the coarse RTIO clock
     * n integer to avoid rounding errors and beating between RTIO clock and user habit
     * n not necessarily a power of two
     * the same throughout the ARTIQ tree to avoid beating of channels

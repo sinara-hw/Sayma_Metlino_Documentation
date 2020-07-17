@@ -1,32 +1,38 @@
+.. _jtag_section:
+
 JTAG
 ====
 
-Scansta112 is 7-Port Multidrop JTAG Multiplexer. It is used to partition scan chains into managable sizes, or to isolate specific devices onto a separate chain. By default Scansta input signal is from IDC header. AMC JTAG is connected to Master Port on SCANSTA, so it can be used as Master or Slave module. The rest modules (MMC, FPGA, FMC, RTM) are tied to slave SCANSTA outputs.
+.. figure:: img/Sayma_AMC_JTAG.svg
 
-There are two JTAG sources – either AMC connector (JSM module) or USB to JTAG bridge (FTDI chip). There is also onboard JTAG connector (Xilinx type) - J3. Insertion of JTAG programmer probe deactivates the FTDI JTAG connectivity and forces SCANSTA chip set this port as master port. By default SCANSTA selects AMC port as master one.
+    JTAG chain
 
-In Sayma AMC, SCANSTA112 is used in Transparent Sticher Mode. In this mode, the IC can be configured via hardware to skip the addressing protocol needed, sothere is no need to run a SVF configuration file on IMPACT when programming the FPGA bitstream.
+On Sayma AMC there are three JTAG sources:
 
-.. figure::img/jtag.png
+* AMC connector (JSM module)
+* USB to JTAG bridge (FTDI chip) 
+* onboard JTAG connector (Xilinx type, keyed) - J6
 
-USB-->JTAG
+By default AMC port is selected as master.
+If USB cable is connected then ``USB_JTAG_ACTIVE`` line is pulled high which disables AMC port and enables USB JTAG access.
+Insertion of JTAG programmer (more specifically grounding of ``EN_USB_JTAG`` line, pin 13 on J6) deactivates the FTDI JTAG connectivity.
 
-
-General block scheme of Scansta connections is shown below.
-
-.. figure:: img/scansta.eps
-
-SCANSTA block scheme
-
-.. Note::
-    The FMC2 and PS is not used.
+Each of JTAG slave devices is connected in chain. Devices from FMC and RTM modules can be inserted into the chain based on their presence signal.
 
 
-Each of JTAG slave devices is connected directly to SCANSTA. SCANSTA allows to connect all devices in chain witn an option to pass one or more devices, intention in Figure \ref{jtagchain}.
+MMC has a separate JTAG connector J29, which is connected to AMC connector JTAG when:
 
-.. figure:: img/jtagchain.eps
+* payload supply is switched off and management supply is on,
+* JTAG programmer is not connected to J6
+* and USB cable is not connected.
 
-SCANSTA JTAG chain
+JTAG connectors pinout
+----------------------
 
+.. figure:: img/FPGA_JTAG_conn.svg
 
-Simplified instruction if using SCANSTA can be found under: \href{http://www.ti.com/lit/an/snla068c/snla068c.pdf}{http://www.ti.com/lit/an/snla068c/snla068c.pdf} 
+    FPGA JTAG - J6
+
+.. figure:: img/MMC_JTAG_conn.svg
+
+    MMC JTAG connector - J29, in position as in PCB

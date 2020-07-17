@@ -33,7 +33,7 @@ Glossary
 	Rear Transition Module.
 * Sayma
 	Smart Arbitrary Waveform Generator, providing 8 channels of 1.2 GSPS 16-bit DACs (2.4 GHz DAC clock) and 125 MSPS 16-bit ADCs. It consists of an AMC, providing the high-speed digital logic, and a RTM, holding the data converters and analog components.
-* Sianra
+* Sinara
 	Open-source hardware ecosystem originally designed for use in quantum physics experiments running the ARTIQ control software. It is licensed under CERN OHL v1.2.
 * uTCA
 	Micro Telecommunications Computing Architecture. MicroTCA is a modular, open standard for building high performance computer systems in a small form factor.

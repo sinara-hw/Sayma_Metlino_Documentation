@@ -1,13 +1,19 @@
 Front panel and headers
 =======================
 
-.. figure:: img/frontcallout.png
+.. todo:: New photos
 
-Front view
+.. figure:: img/sayma_amc_front.jpg
 
-.. figure:: img/topcallout1.png
+    Front view
 
-Front view
+.. figure:: img/sayma_amc_top.jpg
+
+    Top view
+
+.. figure:: img/sayma_amc_bottom.jpg
+
+    Bottom view
 
 +---------------------------------------------------------------------------+
 | Call out table                                                            |
@@ -78,10 +84,6 @@ Front view
 +----------+------------+---------------------------------------------------+
 | 32       | J2         | AMC Connector                                     |
 +----------+------------+---------------------------------------------------+
-
-.. figure: img/botcallout1.png
-
-Front view
 
 
 Callout 5: LD13 is
@@ -185,15 +187,15 @@ Headers pinout
 
 .. figure:: img/jtag1.png
 
-JTAG - Call out 20
+    JTAG - Call out 20
 
 .. figure:: img/jtaglpc.png
 
-JTAG - Call out 21
+    JTAG - Call out 21
 
 .. figure:: img/gpio.png
 
-DIO - Call out 23
+    DIO - Call out 23
 
 +------+------------------------------------------------------+----------+
 | Tespoints table - Call out 30                                          |
@@ -223,11 +225,11 @@ Location of ICs
 
 .. figure:: img/TU1.png
 
-Top
+    Top
 
 .. figure:: img/BU1.png
 
-Bot
+    Bot
 
 +-----+------------------+-------------------------------+
 | ICs Location                                           |
@@ -286,8 +288,6 @@ Bot
 +-----+------------------+-------------------------------+
 | U26 | TPS62175         | P3V3                          |
 +-----+------------------+-------------------------------+
-
-
 
 SW1
 ---

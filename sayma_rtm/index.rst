@@ -12,10 +12,6 @@ Sayma RTM
     CLKdist
     housekeeping
     power
-    testing
     signals
     appendix
     technical
-    #usb-uart
-    #jtag
-    #fpga
