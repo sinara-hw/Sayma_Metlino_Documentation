@@ -7,9 +7,10 @@ Sayma RTM
     description
     view
     routing
+    clocking
+    i2c
     panel
     AFEmezzanine
-    CLKdist
     housekeeping
     power
     signals

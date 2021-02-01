@@ -1,27 +1,59 @@
 RF Front-End Mezzanines
 =======================
 
-Mezzanines providing analogue front-ends (AFEs) for the ADCs and DACs on
-Sayma.
+Mezzanines providing analogue front-ends (AFEs) for the and DACs on Sayma. Same connectors as in FMC standard were used, but these AFEs are not compatible with FMC standard. Connectors are swapped between carrier and AFE to avoid insertion of incompatible FMC module.
+
+There are several kinds of signals routed to AFE:
+
+* 16 signals from the RTM FPGA - 3.3V LVCMOS voltage levels
+* 8 pairs of LVDS signals from the RTM FPGA
+* 12 pairs of LVDS signals from the AMC FPGA
+* 2 I2C buses - 3.3V LVCMOS voltage levels
+* GTP link from the RTM FPGA
+* 4 differential analog channels from DAC
+* differential reference clock
+
+Each AFE is supplied with several analog and digital power supplies:
+
+* P12V0A
+* P6V0A
+* P2V5F
+* P3V3
+* N12V0A
+* N6V0A
+* P3V3MP
+
+See :ref:`afe_max_current_draw`.
 
 TestMod
 -------
 
-Simple mezzanine designed for thermal and connectivity testing, and to
-serve as a template for other mezzanine designs.
+Simple mezzanines designed for thermal and connectivity testing, and to serve as a template for other mezzanine designs.
 
 .. TODO::
 	image
 
-Design files are `here <https://github.com/sinara-hw/TestMod/>`__
-the schematic is
-`here <https://github.com/sinara-hw/TestMod/releases>`__.
+Design repository is `here <https://github.com/sinara-hw/TestMod/>`__, production files are `here <https://github.com/sinara-hw/TestMod/releases>`__.
+
+Design reporistory contains 4 projects that were used for prototyping different aspects of AFE design:
+
+* **FMC Breakout** - breaks out all FMC HPC signals to FMC LPC (LPC signals) and VHDCI connector (HPC signals), with exception of gigabit links
+* **TestMod_SEAx** - "the" Testmod
+
+    * routes DAC differential signals to balun to SMA connectors
+    * routes ADC signals to balun to ADC pins on FMC connector
+    * routes MEZZ_IO signals to I2C GPIO extenders
+    * routes LVDS signals to 30-pin connector
+    * load can be manually enabled on each power supply rail on connector
+    * has additional SMA and MMCX connectors to test trace impedance
+
+* **TestMod_SEAx_Baseboard** - simpler version of TestMod_SEAx, with just SMA connectors for 8 analog signals and 30-pin connector for LVDS signals
+* **Test_SEAx** - board with mating connector for TestMod_SEAx and TestMod_SEAx_Baseboard, which was used to check signal properties of the connector
 
 BaseMod
 -------
 
-BaseMod is a base-band input/output mezzanine. Design files are `here <https://github.com/sinara-hw/BaseMod>`__,
-the schematic is `here <https://github.com/sinara-hw/BaseMod/releases>`_.
+BaseMod is a base-band input/output mezzanine. Design repository is `here <https://github.com/sinara-hw/BaseMod>`__, production files are `here <https://github.com/sinara-hw/BaseMod/releases>`_.
 
 .. TODO::
 	image
@@ -29,7 +61,7 @@ the schematic is `here <https://github.com/sinara-hw/BaseMod/releases>`_.
 Outputs
 ^^^^^^^
 
-BaseMod provides two independent RF outputs, featuring:
+BaseMod provides four independent RF outputs, featuring:
 
 * **Bandwidth**: 10MHz - 4GHz (upper frequency is limited by several different components)
 * **Max output power**: ?dBm (limited by ?).
@@ -44,41 +76,22 @@ BaseMod provides two independent RF outputs, featuring:
 Inputs
 ^^^^^^
 
-BaseMod provides two independent inputs, each of which can be configured (by component placement) as:
+BaseMod provides four inputs which are routed to LTC2324 ADC. ADC and input channel design are the same as in `Sampler EEM module <https://github.com/sinara-hw/Sampler>`__. 
 
-#. Direct feed to ADC via ADA4927-1 buffer for maximum bandwidth
-#. Low-noise programmable gain instrumentation amplifier (AD8253) front-end
-
-* **Bandwidth**: DC-300kHz
-* **Input ranges**: ±0.1V, ±1V, ±10V
-* **Fully differential inputs**: 100k between each input signal and ground and the circuit ground
+* **Bandwidth**: DC-200kHz
+* **Input ranges**: ±10mV, ±100mV, ±1V, ±10V
+* **Fully differential inputs**: input signal routed to differential amplifier
 * **Filters**: Common-mode and differential mode filtering of RF interference for optimum DC precision
 * **Input protection**: diodes between each input and the supply rails for maximum ruggedness
-* Supports both high-speed input directly coupled into a high-speed pre-amp, and low-frequency inputs using a variable-gain instrumentation amplifier (choice by component selection). Pull details from `#81 <https://github.com/m-labs/sinara/issues/81>`_
-* Instrumentation amp: gain, filters, etc.
 
 MixMod
 ------
 
-MixMod is an up-converting mezzanine, using an analogue IQ mixer to mix the input and output RF signals with a LO supplied by Sayma.
+MixMod is a planned up-converting mezzanine, using an analogue IQ mixer to mix the input and output RF signals with a LO supplied by Sayma.
 
-The LO provided by Sayma should be a 3V3 PECL square-wave.
+Design repository is `here <https://github.com/sinara-hw/MixMod>`__, though it wasn't updated for Sayma v2.0. Check issues in that repository for remaining problems in schematics. Initial specifications are `here <https://github.com/sinara-hw/sinara/issues/169#issue-211869922>`__.
 
-Design files are
-`here <https://github.com/sinara-hw/MixMod>`__, schematics are `here <https://github.com/sinara-hw/MixMod/releases>`__
-
-.. TODO
-	image
-
-Outputs
-^^^^^^^
-
-MixMod provides a single RF output between 2.5GHz and 3.5GHz, produced by mixing two DAC channels with a LO supplied by Sayma. Other than the IQ mixer, the output signal-chain is identical to BaseMod.
-
-Inputs
-^^^^^^
-
-MixMod's two inputs can either be operated in baseband or downconversion mode (selectable by component choice). In baseband mode, the inputs function identically to BaseMod's. In downconversion mode, a single SMA input feeds the RF port on an IQ mixer to produce a pair of baseband signals, which then feed the two signal chains.
+MixMod should provide a single RF output between 2.5GHz and 3.5GHz, produced by mixing two DAC channels with a LO supplied by Sayma. Other than the IQ mixer, the output signal-chain is identical to BaseMod.
 
 Mezzanines Mechanical Specification
 -----------------------------------

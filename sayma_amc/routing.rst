@@ -1,7 +1,7 @@
 Routing
 =======
 
-This section contain several block schematics of Sayma AMC board. 
+This section contain several block schematics of Sayma AMC board.
 
 I/O connections
 ---------------
@@ -23,7 +23,7 @@ Block schematic below shows connections to Multi-Gigabit Transceivers (MGT) of t
 
     MGT schematic with optional connections
 
-Table below outlines connections to MGT ports of the FPGA. If there are two possibilities then the default one is listed first. RTM_MGT connections are TX only by default. 
+Table below outlines connections to MGT ports of the FPGA. If there are two possibilities then the default one is listed first. RTM_MGT connections are TX only by default.
 
 +----------------------+---------------------+---------------------------------------------+
 | **Transceiver MGT**  | **Direction**       | **Routed to**                               |

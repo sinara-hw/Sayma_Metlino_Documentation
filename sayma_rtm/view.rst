@@ -1,6 +1,8 @@
 Product view
 ============
 
+.. todo:: Update with new version
+
 .. figure:: img/top1.jpg
 
 Top view

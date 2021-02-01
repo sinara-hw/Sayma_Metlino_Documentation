@@ -1,50 +1,59 @@
 Project description
 ===================
 
-The Sayma RTM module extends Sayma AMC board connectivity by DACs and ADCs modules.
+The Sayma RTM module extends Sayma AMC board connectivity with DACs and AFE modules.
 
 Functional specifications:
 --------------------------
 
-Programmable resources
-^^^^^^^^^^^^^^^^^^^^^^
+Programmable resources:
+^^^^^^^^^^^^^^^^^^^^^^^
 
-* Xilinx Artix-7 XC7A15T-1CSG325
+* Xilinx Artix-7 XC7A35T-3CSG325E
+
+    * speed grade: -3
+    * 4 GTP transceivers (Max Preformance 6.6 Gb/s)
 
 Memory:
 ^^^^^^^
 
-* EEPROM with MAC and unique ID 
+* EEPROM with MAC and unique ID
+
+Digital to Analog Converters:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* 2 Analog Devices AD9154BCPZ
+
+    * 4 channels
+    * 16-bit resolution
+    * 2.4 GSPS sampling rate
+    * JESD interface
 
 Connectivity:
 ^^^^^^^^^^^^^
 
-* 4x mezzaninne connector LSS-120-01-L-DV-A 
-* 40x SMP connector for ADC/DAC
-* RTM connector with 16 GTP pair routed to it.
-* GTP on RTM connector connected to:
+* 2 AFE connectors ASP-134488-01
+* RTM connector compatible with Sayma AMC
+* 4 GTP transceivers connected to:
 
-	* DAC x16 [Tx]
-	* ADC x8 [Rx]
-	* FPGA MGT 2x2 [Tx + Rx]
-	* SATA x2 
-
-* uRFB connector
-
-Supply:
-^^^^^^^
-
-* Monitoring of voltage and Power supply for FPGA and P3V3
+	* Sayma AMC FPGA through RTM connector
+	* AFE (1 channel to each AFE connector)
+	* SATA connector
 
 Clocking:
 ^^^^^^^^^
 
-* UFL CLK input
-* SMA CLK output
+Flexible clocking scheme consisting of:
+
 * Si5324 Clock recovery
+* Si549 clock generation
+* HMC830 + HMC7043 DAC clock and sysref generation
+* UFL CLK input and outputs
+* SMA CLK input
 
 Other:
 ^^^^^^
 
-* Temperature, voltage and current monitoring for critical power buses
+* Temperature monitoring for critical parts of the board
+* Power supplied through RTM connector by Sayma AMC
 

@@ -1,36 +1,33 @@
-Housekeeping Signals
-====================
-
 Sensors
--------
+=======
 
-Temperature:
+Temperature
+^^^^^^^^^^^
 
 IPMI\_I2C:
 
-+-------+--------+-----------------------------------+----------+-----------+
-| No    | Addr.  | placement                         | Type     | Accuracy  |
-+-------+--------+-----------------------------------+----------+-----------+
-| IC39  | 0x4A   | Bottom - close to ADC             | LM75     | +/- 2     |
-+-------+--------+-----------------------------------+----------+-----------+
-| IC40  | 0x49   | Bottom - close to HMC7043 buffer  | LM75     | +/- 2     |
-+-------+--------+-----------------------------------+----------+-----------+
-| IC44  | 0x24   | Bottom - under Mezzanine1         | MAX664A  | +/- 1     |
-+-------+--------+-----------------------------------+----------+-----------+
++------------+--------+-----------------------------------+----------+---------------+
+| Designator | Addr.  | Placement                         | Type     | Accuracy [°C] |
++------------+--------+-----------------------------------+----------+---------------+
+| IC17       | 0x4B   | Top - close to RTM connector      | LM75     | ± 2           |
++------------+--------+-----------------------------------+----------+---------------+
+| IC32       | 0x4A   | Bottom - close both Si549         | LM75     | ± 2           |
++------------+--------+-----------------------------------+----------+---------------+
+| IC35       | 0x4C   | RTM FPGA diode (remote)           | MAX6642  | ± 1           |
++------------+--------+-----------------------------------+----------+---------------+
+| IC35       | 0x4C   | Under Mezzanine1 (local)          | MAX6642  | ± 2           |
++------------+--------+-----------------------------------+----------+---------------+
 
 TEMP\_SENS\_I2C:
 
-+-------+--------+---------------------+----------+-----------+
-| No    | Addr.  | placement           | Type     | Accuracy  |
-+-------+--------+---------------------+----------+-----------+
-| IC56  | 0x48   | Bottom - under DAC  | ADT7420  | +/- 0.25  |
-+-------+--------+---------------------+----------+-----------+
-| IC57  | 0x49   | Bottom center       | ADT7420  | +/- 0.25  |
-+-------+--------+---------------------+----------+-----------+
++------------+--------+---------------------+----------+---------------+
+| Designator | Addr.  | Placement           | Type     | Accuracy [°C] |
++------------+--------+---------------------+----------+---------------+
+| IC3        | 0x48   | Bottom - under DAC0 | ADT7420  | ± 0.25        |
++------------+--------+---------------------+----------+---------------+
+| IC4        | 0x49   | Bottom - under DAC1 | ADT7420  | ± 0.25        |
++------------+--------+---------------------+----------+---------------+
 
-All sensors are available either from AMC side I2C or from RTM\_FPGA.
+IC17, IC32, IC35 sensors are available only from AMC side.
+IC3 and IC4 sensors are available either from AMC side I2C or from RTM\_FPGA.
 
-Safety interlocks
------------------
-
-Temperature interlock is available on RTM board only and gets activated after reaching 80 degrees. This is hardware interlock and cannot be deactivated. Dedicated LED (LD15) gets on and RTM power supply is off until the temperature is exceeded.
