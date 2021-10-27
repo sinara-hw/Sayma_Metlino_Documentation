@@ -1,18 +1,15 @@
 Product view
 ============
 
-.. todo:: Update with new version
-
 .. figure:: img/top1.jpg
 
-Top view
+    Top view
 
 .. figure:: img/bot1.jpg
 
-Bottom view
+    Bottom view
 
-.. figure:: img/front.jpg
+.. figure:: img/rtm-front.jpg
 
-Front view
-
+    Front view
 

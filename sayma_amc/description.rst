@@ -3,6 +3,10 @@ Project description
 
 The Sayma AMC is a Advanced Mezzanine Card carrier board to carry FMC cards and connect RTM modules. It provides high-speed digital logic and memory.
 
+.. figure:: img/sayma_amc_top.jpg
+
+    Sayma AMC
+
 Functional specifications
 -------------------------
 

@@ -1,7 +1,7 @@
 Product view
 ============
 
-.. todo:: New photos, more evenly lit
+.. todo:: Add bottom view in new version
 
 .. figure:: img/sayma_amc_top.jpg
 
@@ -14,8 +14,4 @@ Product view
 .. figure:: img/sayma_amc_front.jpg
 
     Front view
-
-.. .. figure:: img/back.jpg
-
-.. Back view
 

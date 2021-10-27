@@ -14,5 +14,4 @@ Sayma RTM
     housekeeping
     power
     signals
-    appendix
     technical

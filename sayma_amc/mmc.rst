@@ -39,11 +39,37 @@ Another option is to compile under Linux using cmake toolchain in version 4.9.3.
 	cmake ../ -DBOARD=sayma -DBOARD_RTM=sayma -DTARGET_CONTROLLER=LPC1776 -DCMAKE_BUILD_TYPE=Debug
 	make
 
+Minimal Dockerfile which downloads and compiles firmware:
+
+::
+
+	FROM ubuntu:20.04
+
+	RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+		DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && \
+		DEBIAN_FRONTEND=noninteractive apt-get install -y gcc-arm-none-eabi cmake git
+
+	RUN git clone https://github.com/sinara-hw/openMMC.git && \
+		cd openMMC && git checkout sayma-devel
+	
+	ENV CC="arm-none-eabi-gcc"
+	ENV CXX="arm-none-eabi-g++"
+
+	RUN cd openMMC && mkdir build && cd build && \ 
+		cmake ../ -DBOARD=sayma -DBOARD_RTM=sayma -DTARGET_CONTROLLER=LPC1776 \
+			-DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER_WORKS=1 \
+			-DCMAKE_CXX_COMPILER_WORKS=1 && \
+		make
+
+	ENTRYPOINT ["/bin/bash"]
+
+You can use it as a reference to configure your system for compilation.
+
+Source code of OpenMMC is located `here <https://github.com/sinara-hw/openmmc/tree/sayma-devel>`_. Currently "sayma-devel" branch is used.
+
 .. todo::
 		* Add steps to import project to LPCXpresso
 		* Add steps for MCUXpresspo
-		* Verify steps for standalone compilation
-		* Add prerequisites for standalone compilation
 
 Header flashing
 ^^^^^^^^^^^^^^^
@@ -66,29 +92,16 @@ Steps to flash using USB:
 	* Enable verify after programming
 	* Press start
 
-The source code is written in C and can be found on github.
-
-`Source code <https://github.com/m-labs/sinara/tree/master/SAYMA\_firmware>`_
-
-`Pre-compiled binary <https://github.com/m-labs/mmc-firmware/releases>`_
-
 .. todo::
 	* Verify flashing with flashmagic (steps above were checked for Sayma v1.0, there may be need to set switch)
-	* Push openmmc to public repository
-	* Update links
 
 AMC connector flashing
 ^^^^^^^^^^^^^^^^^^^^^^
 
-JTAG lines of MMC are connected to AMC JTAG if no programmer is present and payload power is switched off (see :ref:`jtag_section` section), so in theory it should be possible to program MMC with JTAG Switch Module. However this wasn't verified in practice.
+JTAG lines of MMC are connected to AMC JTAG if no programmer is present and payload power is switched off (see :ref:`jtag_section` section), so it should be possible to program MMC with JTAG Switch Module. However this wasn't verified in practice.
 
 Ethernet
 --------
 
 MMC does not have access to Ethernet.
-
-OpenMMC
--------
-
-`OpenMMC Project <https://github.com/lnls-dig/openMMC>`_
 

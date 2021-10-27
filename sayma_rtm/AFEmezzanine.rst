@@ -1,7 +1,7 @@
 RF Front-End Mezzanines
 =======================
 
-Mezzanines providing analogue front-ends (AFEs) for the and DACs on Sayma. Same connectors as in FMC standard were used, but these AFEs are not compatible with FMC standard. Connectors are swapped between carrier and AFE to avoid insertion of incompatible FMC module.
+Mezzanines provide analogue front-ends (AFEs) for the DACs on Sayma. Same connectors as in FMC standard were used, but these AFEs are not compatible with FMC standard. Connectors are swapped between carrier and AFE to avoid insertion of incompatible FMC module.
 
 There are several kinds of signals routed to AFE:
 
@@ -103,6 +103,5 @@ Mezzanines Mechanical Specification
 Mezzaninne dimensions
 
 * Mounting holes: There are four mounting holes fi 2.7mm for M2.5 screws.
-* SMA locations and pns
-* Connectors
 
+For exact mechanical drawings visit `TestMod repository <https://github.com/sinara-hw/TestMod/>`__, where source files are located.

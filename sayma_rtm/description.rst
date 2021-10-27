@@ -3,6 +3,10 @@ Project description
 
 The Sayma RTM module extends Sayma AMC board connectivity with DACs and AFE modules.
 
+.. figure:: img/rtm-whole.jpg
+
+    Sayma RTM
+
 Functional specifications:
 --------------------------
 
