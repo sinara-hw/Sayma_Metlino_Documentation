@@ -1,3 +1,5 @@
+.. _rtm_clocking:
+
 Clocking
 ========
 

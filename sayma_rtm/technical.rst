@@ -1,14 +1,14 @@
 PCB technical information
 =========================
 
-`Project outputs <https://github.com/sinara-hw/Sayma_RTM/releases>`_
+`Manufacturing files <https://github.com/sinara-hw/Sayma_RTM/releases>`_
 
 Stackup:
 
 +--------+-------------+-------------------------------------------------------------------------------------------+
 | Layer  | Copper [um] | Function                                                                                  |
-+--------+-------------+-------------------------------------------------------------------------------------------+
-| L1     | 36          | polygons, short traces and analog signals between ADC/DAC and connectors                  |
++========+=============+===========================================================================================+
+| L1     | 36          | polygons, short traces and analog signals between DAC and connectors                      |
 +--------+-------------+-------------------------------------------------------------------------------------------+
 | P2     | 18          | GND                                                                                       |
 +--------+-------------+-------------------------------------------------------------------------------------------+
@@ -20,8 +20,8 @@ Stackup:
 +--------+-------------+-------------------------------------------------------------------------------------------+
 | P6     | 18          | GND                                                                                       |
 +--------+-------------+-------------------------------------------------------------------------------------------+
-| L7     | 18          | non-critical signals like I2C, SPI, mezzanine IOs,                                        |
-|        |             | status, LED, some power polygons, etc                                                     |
+| L7     | 18          | I2C, SPI, mezzanine IOs,                                                                  |
+|        |             | status, LED, power polygons                                                               |
 +--------+-------------+-------------------------------------------------------------------------------------------+
 | P8     | 18          | GND                                                                                       |
 +--------+-------------+-------------------------------------------------------------------------------------------+
@@ -34,7 +34,7 @@ The total height of the board is: 1.59 mm. Dielectric is a standard FR408.
 
 .. figure:: img/stackup.png
 
-SAYMA RTM stackup
+    SAYMA RTM stackup
 	
 .. note:: 
-	The thickness of copper in Figure 17 is 0.04mm and 0.02mm is due to approximation. In fact it is 0.036mm and 0.018mm.
+	The thickness of copper in Figure 17 is 0.04mm and 0.02mm is due to approximation. In fact it is 0.036mm and 0.018mm. See table above.

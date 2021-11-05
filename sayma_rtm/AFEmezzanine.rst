@@ -1,3 +1,5 @@
+.. _afe:
+
 RF Front-End Mezzanines
 =======================
 
@@ -55,8 +57,7 @@ BaseMod
 
 BaseMod is a base-band input/output mezzanine. Design repository is `here <https://github.com/sinara-hw/BaseMod>`__, production files are `here <https://github.com/sinara-hw/BaseMod/releases>`_.
 
-.. TODO::
-	image
+.. figure:: img/basemod.jpg
 
 Outputs
 ^^^^^^^

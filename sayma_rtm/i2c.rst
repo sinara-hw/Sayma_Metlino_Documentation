@@ -1,3 +1,5 @@
+.. _rtm_i2c:
+
 I2C connections
 ===============
 
@@ -7,4 +9,3 @@ The I2C MUX is made from two TCA9548 I2C multiplexers. In Sayma RTM there are tw
 
     I2C map with addresses in hex
 
-.. todo:: Add a table with designator, part number, mux port, address and short description of the part.

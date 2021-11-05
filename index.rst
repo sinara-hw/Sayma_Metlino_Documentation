@@ -15,7 +15,6 @@ Welcome to Sayma documentation!
     sayma_amc/index
     sayma_rtm/index
     fpga
-    testing
     glossary
     todo
 
