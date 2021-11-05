@@ -1,3 +1,6 @@
+
+.. _amc_usb_uart:
+
 USB-UART
 ========
 

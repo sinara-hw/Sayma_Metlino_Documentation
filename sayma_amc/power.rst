@@ -1,3 +1,6 @@
+
+.. _amc_pwr:
+
 Power supply
 ============
 

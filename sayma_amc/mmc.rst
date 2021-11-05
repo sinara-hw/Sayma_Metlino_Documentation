@@ -1,3 +1,6 @@
+
+.. _mmc:
+
 MMC
 ===
 
@@ -24,6 +27,13 @@ During boot MMC performs several tasks:
 
 .. note::
 	Configuration of CPU, UART does not affect any of LED indicators.
+
+SW2 header
+----------
+
+SW2 header can be used to enable ISP mode of MMC processor. Enabling first and second switch allows to program the processor using USB. Enabling last switch allows to run the board outside of the crate.
+
+See :ref:`amc_overview` for the location of the header (bottom view, call-out 1).
 
 Bootstraping
 ------------
@@ -103,5 +113,5 @@ JTAG lines of MMC are connected to AMC JTAG if no programmer is present and payl
 Ethernet
 --------
 
-MMC does not have access to Ethernet.
+Unlike in Sayma v1.0, MMC does not have access to Ethernet.
 

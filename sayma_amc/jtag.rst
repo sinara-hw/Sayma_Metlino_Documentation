@@ -26,6 +26,8 @@ MMC has a separate JTAG connector J29, which is connected to AMC connector JTAG 
 * JTAG programmer is not connected to J6
 * and USB cable is not connected.
 
+.. _amc_jtag_pinout:
+
 JTAG connectors pinout
 ----------------------
 

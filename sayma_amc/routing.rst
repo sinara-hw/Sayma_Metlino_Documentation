@@ -3,6 +3,8 @@ Routing
 
 This section contain several block schematics of Sayma AMC board.
 
+.. _amc_io_connections:
+
 I/O connections
 ---------------
 
@@ -71,4 +73,3 @@ Table below outlines connections to MGT ports of the FPGA. If there are two poss
 | 4\_228               | TX (optionally RX)  | RTM\_MGT                                    |
 +----------------------+---------------------+---------------------------------------------+
 
-.. todo:: Schematic with optional connections
