@@ -49,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Sayma'
-copyright = '2020, Creotech Instruments S.A.'
+copyright = '2021, Creotech Instruments S.A.'
 author = 'Creotech Instruments S.A.'
 
 # The version info for the project you're documenting, acts as replacement for
