@@ -1,11 +1,13 @@
 Project description
 ===================
 
-The Sayma AMC is an Advanced Mezzanine Card carrier board to carry FMC cards and connect RTM modules. It provides high-speed digital logic and memory.
+Metlino is an extension for a MCH which provides an FPGA with connection to each AMC module in the crate through MCH tongue 3. It also provides an FMC LPC slot and two VHDCI connectors. Metlino is designed to work with NAT MCH v3.5.
 
-.. figure:: img/sayma_amc_top.jpg
+.. note:: Make sure to check if daughterboard connector is mounted on your MCH.
 
-    Sayma AMC
+.. figure:: img/metlino_whole.jpg
+
+    Metlino (bottom) attached to the MCH (top)
 
 Functional specifications
 -------------------------
@@ -18,12 +20,11 @@ Programmable resources:
     * speed grade: -1
     * 20 GTH transceivers (Max Preformance 16.3 Gb/s)
 
-* MMC: LPC17762984
+* Managment CPU: LPC17762984
 
 Memory:
 ^^^^^^^
 
-* 1GB  DDR3 SDRAM with 32-bit interface and 800 MHz clock
 * 2GB  DDR3 SDRAM with 64-bit interface and 800 MHz clock
 * SPI Flash for FPGA configuration.
 * SPI Flash for user data storage
@@ -36,26 +37,25 @@ Connectivity:
 * Micro-USB providing:
 
     * JTAG
-    * AMC FPGA UART
-    * RTM FPGA UART
-    * MMC UART and DFU
+    * FPGA UART
+    * CPU UART and DFU
 
 * Stand-alone 12 V power connector
 * MGT (Multi-Gigabit Transceiver) connected to:
 
-    * RTM x17 (optionally x16 with additional Fat\_Pipe1 connection)
-    * Fat\_Pipe1 x1 (optionally x2 without additional RTM connection)
-    * Port 0 (additionally connected to SATA)
-    * SFP x1 (optionally x2 if Port 0 is connected to ETH PHY)
+    * Backplane x12
+    * FMC x4 (optionally x5 if alt port 0 is not used)
+    * Port 0 (usually Ethernet from MCH, additionally this link is also connected to SATA port)
+    * SFP x3
 
-* RTM connector compatible with Sayma RTM module.
+* VHDCI connector x2 compatible with `VHDCI Carrier <https://github.com/sinara-hw/vhdci_carrier>`_
 
 Optional connections can be made by resoldering capacitors on PCB. 
 
 Power supply:
 ^^^^^^^^^^^^^
 
-* Monitoring of voltage and Power supply for RTM 12 V and FMC 12 V
+* Monitoring of voltage and Power supply for FMC 12 V
 * FMC VADJ fixed to 1,8 V
 * Monitoring current of all FMC buses
 * Stand-alone power connector
@@ -64,14 +64,15 @@ Clocking:
 ^^^^^^^^^
 
 * Si5324 - clock recovery and jitter attenuator
-* uFL CLK input and output
-* MCX CLK input and output
+* SMA CLK input and output (front panel)
+* MCX CLK input x2 (see :ref:`metlino_clocking`)
+
 
 Other:
 ^^^^^^
 
 * Temperature, voltage and current monitoring for critical power buses
-* Temperature monitoring: FMC1, supply, FPGA core, DDR memory
+* Temperature monitoring: FMC, supply, FPGA core, DDR memory
 * JTAG multiplexer for FMC access, local JTAG port and USB JTAG
 * Optional Ethernet RGMII PHY for Port 0
 

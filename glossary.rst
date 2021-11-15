@@ -25,6 +25,8 @@ Glossary
 	Multi-Gigabit Transceiver.
 * MixMod
 	An up-converting mezzanine, using an analogue IQ mixer to mix the input and output RF signals with a LO supplied by Sayma.
+* MCH
+    MicroTCA Carrier Hub. Board which manages whole uTCA crate.
 * MMC
 	Module Management Controller. The MMC is the required intelligent controller that manages the Module and is interfaced to the Carrier via IPMB-Local.
 * RFBP

@@ -14,6 +14,7 @@ Welcome to Sayma documentation!
     wiki_sayma
     sayma_amc/index
     sayma_rtm/index
+    metlino/index
     fpga
     glossary
     todo

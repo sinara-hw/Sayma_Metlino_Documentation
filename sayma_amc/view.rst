@@ -1,8 +1,6 @@
 Product view
 ============
 
-.. todo:: Add bottom view in new version
-
 .. figure:: img/sayma_amc_top.jpg
 
     Top view

@@ -1,7 +1,7 @@
 Routing
 =======
 
-This section contain several block schematics of Sayma RTM board.
+This section contain block schematics of Sayma RTM board.
 
 I/O connections
 ---------------

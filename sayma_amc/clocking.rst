@@ -13,7 +13,7 @@ FPGA Oscillators
 
 * OSC1 - 200 MHz clock for MGT
 * OSC2 - 200 MHz clock for MGT (not mounted by default)
-* OSC3 - 50MHz main clock source for FPGA resources
+* OSC3 - 50 MHz main clock source for FPGA resources
 
 Clock distribution
 ------------------

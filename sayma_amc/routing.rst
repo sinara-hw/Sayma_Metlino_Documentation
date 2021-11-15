@@ -1,7 +1,7 @@
 Routing
 =======
 
-This section contain several block schematics of Sayma AMC board.
+This section contain block schematics of Sayma AMC board.
 
 .. _amc_io_connections:
 
@@ -28,8 +28,8 @@ Block schematic below shows connections to Multi-Gigabit Transceivers (MGT) of t
 Table below outlines connections to MGT ports of the FPGA. If there are two possibilities then the default one is listed first. RTM_MGT connections are TX only by default.
 
 +----------------------+---------------------+---------------------------------------------+
-| **Transceiver MGT**  | **Direction**       | **Routed to**                               |
-+----------------------+---------------------+---------------------------------------------+
+|   Transceiver        |   Direction         |   Routed to                                 |
++======================+=====================+=============================================+
 | 0\_224               | RX & TX             | SFP0                                        |
 +----------------------+---------------------+---------------------------------------------+
 | 1\_224               | RX & TX             | PORT 0 or SFP1                              |
@@ -70,6 +70,5 @@ Table below outlines connections to MGT ports of the FPGA. If there are two poss
 +----------------------+---------------------+---------------------------------------------+
 | 3\_228               | TX (optionally RX)  | RTM\_MGT                                    |
 +----------------------+---------------------+---------------------------------------------+
-| 4\_228               | TX (optionally RX)  | RTM\_MGT                                    |
-+----------------------+---------------------+---------------------------------------------+
 
+.. note:: Only port 0 and port 4 are connected to transceivers. Sayma AMC will receive Ethernet only from left (main) MCH slot (though Ethernet is not used by default in Artiq on Sayma). Sayma AMC will only connect to Metlino in left (main) MCH slot.

@@ -23,6 +23,8 @@ Board overview
 | 7  | Red LED           | Indicates power on.                                         |
 +----+-------------------+-------------------------------------------------------------+
 
+.. warning:: Due to a `bug in schematics <https://github.com/sinara-hw/Sayma_RTM/issues/105>`_ RTM is not hot-swappable on its own, only together with AMC board.
+
 +--------+------------------------+-------------------------+-------------------------+
 | LED    | On                     | Blinking                | Off                     |
 +========+========================+=========================+=========================+
