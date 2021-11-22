@@ -1,11 +1,6 @@
 Introduction to Micro TCA
 =========================
 
-MicroTCA (uTCA) is Sinara's preferred form-factor for hardware with
-high-speed data converters requiring deterministic phase control, such
-as the Sayma 2.4 GSPS smart arbitrary waveform
-generator (SAWG).
-
 uTCA is a modular, open standard originally developed by the
 telecommunications industry. It allows a single rack master -- the Micro
 TCA Carrier Hub (MCH) -- to control multiple slave boards, known as
@@ -20,9 +15,6 @@ digital hardware, communicating with the MCH via gigabit serial links
 over the AMC backplane. The RTMs hold data converters and other
 low-noise analog components, controlled by the corresponding AMC. RTM cards 
 are screened from AMCs to minimise interference from the high-speed digital logic.
-
-.. TODO::
-    Insert images of R5 crate with new boards and Metlino.
 
 .. figure:: img/MTCA_Front1.jpg
 

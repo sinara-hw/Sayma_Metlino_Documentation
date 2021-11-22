@@ -12,12 +12,9 @@ Welcome to Sayma documentation!
     wiki_introduction
     wiki_utca
     wiki_sayma
-    sayma_amc/index
-    sayma_rtm/index
     metlino/index
     fpga
     glossary
-    todo
 
 
 Indices and tables

@@ -177,3 +177,10 @@ SW1 is used to chose configuration mode of the FPGA. Configuration modes define 
 +-----+-----+-----+-----------------------+
 | 1   | 1   | 1   | Slave Serial mode     |
 +-----+-----+-----+-----------------------+
+
+.. figure:: img/sw1.jpg
+
+    SW1 - reccomended settings
+
+Settings shown above (switches 1 and 4 off, 2 and 3 on) allow the FPGA to start up from built-in flash storage.
+

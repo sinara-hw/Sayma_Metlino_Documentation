@@ -1,0 +1,1 @@
+This repository contains sources for [Sayma and Metlino documentation hosted on Read the Docs](https://sayma-metlino-documentation.readthedocs.io). Documentation is automatically built whenever new commit is pushed.

@@ -1,10 +1,6 @@
 FPGA signal tables
 ==================
 
-.. todo:: 
-    * Add pin of RTM connector to the table
-    * Add signals other than MGT and LVDS
-
 SFP0
 ----
 

@@ -29,3 +29,4 @@ JTAG connectors pinout
 .. figure:: img/MMC_JTAG_conn.svg
 
     MMC JTAG connector - J22, in position as in PCB
+

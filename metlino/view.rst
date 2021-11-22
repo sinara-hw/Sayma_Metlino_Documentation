@@ -16,5 +16,4 @@ Product view
 .. figure:: img/metlino_front.jpg
 
     Front view
-    
-.. todo:: Update with professional photos.
+
